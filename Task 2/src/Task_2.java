@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class CLS {
     public static void main(String[] args) {
 
-        // Task 1. Дана последовательность действительных чисел a1,a2,...,an.
+        // Task 2. Дана последовательность действительных чисел a1,a2,...,an.
         // Заменить все её члены, больше данного Z, этим числом. Посчитать количество замен
 
         Scanner scanner = new Scanner(System.in);
