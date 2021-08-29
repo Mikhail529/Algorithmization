@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class CLS {
     public static void main(String[] args) {
 
-        // 1. Написать метод(методы) для нахождения наибольшего общего делителя и наименьшего
+        // Task 35. Написать метод(методы) для нахождения наибольшего общего делителя и наименьшего
         // общего кратного двух натуральных чисел ( HOK(a,b) = (a*b) / HOD(a,b) )
 
         Scanner scanner = new Scanner(System.in);
