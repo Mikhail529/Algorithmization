@@ -5,10 +5,10 @@ public class CLS {
         // Составить программу, которая приводит эти дроби к общему знаменателю и упорядочивает
         // их в порядке возрастания
 
-        CML [] array = {new CML(1, 3), new CML(2, 4),
-                new CML(7, 12), new CML(5, 12),
-                new CML(12, 3), new CML(17, 24),
-                new CML(5, 6), new CML(13, 3)};
+        CML [] array = {new CML(1, 5), new CML(4, 8),
+                new CML(5, 11), new CML(11, 17),
+                new CML(4, 15), new CML(8, 15),
+                new CML(2, 10), new CML(7, 21)};
 
         setX(array);
         sort(array);
