@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 public class CLS {
     public static void main(String[] args) {
@@ -7,28 +8,38 @@ public class CLS {
         // (например 41 и 43). Найти и напечатать все пары "близнецов" на отрезке [n, 2n],
         // где n-заданое натуральное число больше 2. Для решения задачи использовать декомпозицию
 
-        // Task 48. Натуральное число, в записи которого n цифр, называют числом Армстронга, если
-        // сумма его цифр, возведена в степень n, равна самому числу. Найти все числа Армстронга
-        // от 1 до k. Для решения задачи использовать декомпозицию
-
-        ArmstrongNumber(Enter());
-    }
-
-    public static int Enter() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter number k: ");
-        return scanner.nextInt();
+        System.out.println("Please enter a number greater than two: ");
+        int n = scanner.nextInt();
+
+        testElements(n);
+
+        System.out.println("Enter the second number: ");
+        int n2 = scanner.nextInt();
+
+        pairPrint(n, n2);
+    }
+    
+    public static void testElements(int n) {
+        Scanner scanner = new Scanner(System.in);
+        while (!(n >= 2 )) {
+            System.out.println("Please enter a number greater than two: ");
+            n = scanner.nextInt();
+        }
     }
 
-    public static void ArmstrongNumber (int k) {
-        for (int i=0; i<=k; i++) {
-            double sum = 0;
-            String[] arrayStr = String.valueOf(i).split("");
-            for (String s : arrayStr) {
-                sum += Math.pow(Double.parseDouble(s), arrayStr.length);
-            }
-            if (i == sum) {
-                System.out.println("Armstrong number: " + (int) sum);
+    public static boolean isPrime(final int number) {
+        return IntStream.rangeClosed(2, number / 2).anyMatch(i -> number % i == 0);
+    }
+
+    public static void pairPrint(int n, int n2) {
+        int numberPair = 0;
+        for (int i=n; i<n2; i++) {
+            if (!(isPrime(i))) {
+                if ( !(isPrime(i+2))) {
+                    numberPair++;
+                    System.out.print("Pair is " + numberPair + ": " + i + " and " + (i+2) + "\n");
+                }
             }
         }
     }
